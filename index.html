@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+font-size: 3rem;
+animation: beat 1.5s infinite;
+display: inline-block;
+}
+@keyframes beat {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.2); }
+}
+.footer {
+margin-top: 40px;
+font-size: 0.9rem;
+opacity: 0.8;
+}
+.btn {
+display: inline-block;
+margin-top: 24px;
+padding: 12px 28px;
+background: #c2185b;
+color: #fff;
+border-radius: 999px;
+text-decoration: none;
+font-weight: 600;
+transition: transform .2s ease, box-shadow .2s ease;
+box-shadow: 0 10px 25px rgba(194,24,91,0.35);
+}
+.btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 14px 30px rgba(194,24,91,0.45);
+}
+.floating-hearts span {
+position: fixed;
+bottom: -40px;
+font-size: 24px;
+animation: floatUp 8s linear infinite;
+opacity: 0.7;
+}
+@keyframes floatUp {
+0% { transform: translateY(0) translateX(0); opacity: 0; }
+10% { opacity: 0.7; }
+100% { transform: translateY(-110vh) translateX(40px); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="heart">❤️</div>
+<h1>Feliz 14 de Febrero</h1>
+<h2>Para la persona que hace latir mi corazón</h2>
+
+
+<p class="message">
+Amor mío,<br><br>
+Hoy no es solo un día para celebrar el amor, es un día para recordarte lo importante que eres para mí.
+Desde que llegaste a mi vida, todo tiene más sentido, más color y más sonrisas.
+Gracias por tu cariño, tu paciencia y por caminar a mi lado.
+<br><br>
+Prometo seguir eligiéndote, hoy y siempre.
+</p>
+
+
+<a href="#" class="btn">Te amo 💕</a>
+
+
+<div class="footer">
+Hecho con todo mi amor, solo para ti ✨
+</div>
+</div>
+
+
+<div class="floating-hearts" id="hearts"></div>
+
+
+<script>
+const heartsContainer = document.getElementById('hearts');
+const emojis = ['❤️','💖','💕','💘','💝'];
+
+
+function createHeart() {
+const span = document.createElement('span');
+span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+span.style.left = Math.random() * 100 + 'vw';
+span.style.animationDuration = (6 + Math.random() * 4) + 's';
+heartsContainer.appendChild(span);
+
+
+setTimeout(() => span.remove(), 10000);
+}
+
+
+setInterval(createHeart, 600);
+</script>
+</body>
+</html>
