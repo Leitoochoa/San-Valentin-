@@ -1,94 +1,90 @@
 <!DOCTYPE html>
-font-size: 3rem;
-animation: beat 1.5s infinite;
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Para Ti, Mi Amor ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body {
+margin: 0;
+min-height: 100vh;
+font-family: 'Montserrat', sans-serif;
+background: linear-gradient(135deg, #ff758c, #ff7eb3);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #5a1a1a;
+overflow-x: hidden;
+}
+.card {
+background: rgba(255, 255, 255, 0.95);
+max-width: 900px;
+width: 92%;
+border-radius: 28px;
+padding: 50px 36px;
+box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+text-align: center;
+position: relative;
+animation: fadeIn 1.5s ease;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+h1 {
+font-family: 'Great Vibes', cursive;
+font-size: 4rem;
+margin: 0 0 10px;
+color: #c2185b;
+}
+h2 {
+font-weight: 400;
+margin: 0 0 30px;
+}
+.message {
+font-size: 1.15rem;
+line-height: 1.9;
+max-width: 720px;
+margin: 0 auto 36px;
+}
+.heart {
+font-size: 3.2rem;
+animation: beat 1.4s infinite;
 display: inline-block;
+margin-bottom: 10px;
 }
 @keyframes beat {
 0%, 100% { transform: scale(1); }
-50% { transform: scale(1.2); }
-}
-.footer {
-margin-top: 40px;
-font-size: 0.9rem;
-opacity: 0.8;
+50% { transform: scale(1.25); }
 }
 .btn {
 display: inline-block;
-margin-top: 24px;
-padding: 12px 28px;
-background: #c2185b;
+margin-top: 26px;
+padding: 14px 34px;
+background: linear-gradient(135deg, #c2185b, #ff4f81);
 color: #fff;
 border-radius: 999px;
 text-decoration: none;
 font-weight: 600;
-transition: transform .2s ease, box-shadow .2s ease;
-box-shadow: 0 10px 25px rgba(194,24,91,0.35);
-}
-.btn:hover {
-transform: translateY(-2px);
+font-size: 1.05rem;
+transition: transform .25s ease, box-shadow .25s ease;
 box-shadow: 0 14px 30px rgba(194,24,91,0.45);
 }
-.floating-hearts span {
-position: fixed;
-bottom: -40px;
-font-size: 24px;
-animation: floatUp 8s linear infinite;
-opacity: 0.7;
+.btn:hover {
+transform: translateY(-3px) scale(1.03);
+box-shadow: 0 20px 40px rgba(194,24,91,0.6);
 }
-@keyframes floatUp {
-0% { transform: translateY(0) translateX(0); opacity: 0; }
-10% { opacity: 0.7; }
-100% { transform: translateY(-110vh) translateX(40px); opacity: 0; }
+.hidden-message {
+display: none;
+margin-top: 30px;
+font-size: 1.1rem;
+animation: fadeIn 1s ease;
+color: #a0134a;
 }
-</style>
-</head>
-<body>
-<div class="card">
-<div class="heart">❤️</div>
-<h1>Feliz 14 de Febrero</h1>
-<h2>Para la persona que hace latir mi corazón</h2>
-
-
-<p class="message">
-Amor mío,<br><br>
-Hoy no es solo un día para celebrar el amor, es un día para recordarte lo importante que eres para mí.
-Desde que llegaste a mi vida, todo tiene más sentido, más color y más sonrisas.
-Gracias por tu cariño, tu paciencia y por caminar a mi lado.
-<br><br>
-Prometo seguir eligiéndote, hoy y siempre.
-</p>
-
-
-<a href="#" class="btn">Te amo 💕</a>
-
-
-<div class="footer">
-Hecho con todo mi amor, solo para ti ✨
-</div>
-</div>
-
-
-<div class="floating-hearts" id="hearts"></div>
-
-
-<script>
-const heartsContainer = document.getElementById('hearts');
-const emojis = ['❤️','💖','💕','💘','💝'];
-
-
-function createHeart() {
-const span = document.createElement('span');
-span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-span.style.left = Math.random() * 100 + 'vw';
-span.style.animationDuration = (6 + Math.random() * 4) + 's';
-heartsContainer.appendChild(span);
-
-
-setTimeout(() => span.remove(), 10000);
-}
-
-
-setInterval(createHeart, 600);
-</script>
-</body>
+.footer {
+margin-top: 46px;
+font-size: 0.9rem;
+opacity: 0.8;
 </html>
