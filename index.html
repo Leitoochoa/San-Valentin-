@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>14 de Febrero</title>
+
 <style>
 body{
   background:#0f0f0f;
   color:#e6e6e6;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -15,139 +16,107 @@ body{
   margin:0;
   text-align:center;
 }
+
 .contenedor{
   max-width:800px;
-  padding:40px;
+  width:90%;
 }
-h1{
-  font-weight:300;
-  letter-spacing:2px;
-}
-p{
-  line-height:1.8;
-  margin:20px 0;
-  font-size:18px;
-  color:#cfcfcf;
-}
-textarea{
-  width:100%;
-  height:120px;
-  margin-top:20px;
-  padding:12px;
-  background:#1a1a1a;
-  color:white;
-  border:1px solid #333;
-  resize:none;
-}
+
 button{
-  margin-top:15px;
+  margin-top:20px;
   padding:12px 25px;
   background:#ffffff10;
   border:1px solid #ffffff40;
   color:white;
   cursor:pointer;
-  transition:0.3s;
   margin-right:10px;
 }
+
 button:hover{
   background:#ffffff30;
 }
+
+textarea{
+  width:100%;
+  height:120px;
+  padding:12px;
+  background:#1a1a1a;
+  color:white;
+  border:1px solid #333;
+  resize:none;
+  margin-top:20px;
+}
+
 .oculto{
   display:none;
 }
 </style>
-</head>
 
+</head>
 <body>
+
 <div class="contenedor">
 
+<!-- 🟢 PANTALLA 1 -->
+<div id="pantalla1">
 <h1>14 de Febrero</h1>
 
-<div id="contenidoPrincipal">
+<p> 14 de febrero. Una fecha que muchos usan para celebrar el amor. Y sí… yo también estaba preparando algo especial. Con intención. Con ganas. Con ilusión. </p>
+ 
+  <p> Pero después de lo que pasó ayer, todo eso cambió. No por orgullo. No por enojo. Sino por lo que me hizo sentir. </p>
 
-<p>
-14 de febrero.
-Una fecha que muchos usan para celebrar el amor.
-Y sí… yo también estaba preparando algo especial.
-Con intención.
-Con ganas.
-Con ilusión.
-</p>
+  <p> Lo de ayer no fue solo un momento aislado. Fue el punto que terminó de encajar cosas que ya venían acumulándose: 
+    dudas pequeñas, silencios que intenté entender, sensaciones que preferí no convertir en conflicto. </p>
+ 
+  <p> Yo estaba construyendo esto con intención. No estaba jugando. Por eso lo que pasó no me hizo explotar… me hizo cuestionar. Y eso pesa más. </p> 
+ 
+  <p> No quiero romantizar una fecha si por dentro tengo incertidumbre. Necesito saber si estamos en el mismo lugar.
+    Si lo que yo estoy dispuesto a construir, también lo estás construyendo tú. </p> 
 
-<p>
-Pero después de lo que pasó ayer,
-todo eso cambió.
-No por orgullo.
-No por enojo.
-Sino por lo que me hizo sentir.
-</p>
+  <p> No busco pelea. No busco señalar. Busco claridad. Busco una respuesta real. </p> <p> Si algo cambió, prefiero saberlo.
+    Si tienes dudas, dímelo. Si sigues aquí con la misma intención, también dímelo. Pero sin rodeos. Sin decir lo que suena bien. Solo la verdad. </p> 
 
-<p>
-Lo de ayer no fue solo un momento aislado.
-Fue el punto que terminó de encajar cosas que ya venían acumulándose:
-dudas pequeñas,
-silencios que intenté entender,
-sensaciones que preferí no convertir en conflicto.
-</p>
-
-<p>
-Yo estaba construyendo esto con intención.
-No estaba jugando.
-Por eso lo que pasó no me hizo explotar…
-me hizo cuestionar.
-Y eso pesa más.
-</p>
-
-<p>
-No quiero romantizar una fecha si por dentro tengo incertidumbre.
-Necesito saber si estamos en el mismo lugar.
-Si lo que yo estoy dispuesto a construir,
-también lo estás construyendo tú.
-</p>
-
-<p>
-No busco pelea.
-No busco señalar.
-Busco claridad.
-Busco una respuesta real.
-</p>
-
-<p>
-Si algo cambió, prefiero saberlo.
-Si tienes dudas, dímelo.
-Si sigues aquí con la misma intención, también dímelo.
-Pero sin rodeos.
-Sin decir lo que suena bien.
-Solo la verdad.
-</p>
-
-<p>
-Prefiero una verdad que incomode
-antes que una tranquilidad que no sea sincera.
-</p>
-
-<textarea id="respuesta" placeholder="Escribe aquí lo que sientes..."></textarea>
-<button onclick="enviarRespuesta()">Enviar respuesta</button>
-
+  
+  <p> Prefiero una verdad que incomode antes que una tranquilidad que no sea sincera. </p>
+<button onclick="irARespuesta()">Responder</button>
 </div>
 
-<div id="preguntaExtra" class="oculto">
-<p>¿Quieres agregar algo más?</p>
+
+<!-- 🟢 PANTALLA 2 -->
+<div id="pantalla2" class="oculto">
+
+<h2>Escribe lo que realmente sientes</h2>
+
+<div id="formulario">
+<textarea id="respuesta" placeholder="Escribe aquí..."></textarea>
+<br>
+<button onclick="enviarRespuesta()">Enviar</button>
+</div>
+
+<div id="opciones" class="oculto">
+<p>¿Algo más que agregar?</p>
 <button onclick="agregarMas()">Sí</button>
 <button onclick="finalizar()">No</button>
 </div>
 
-<div id="finalMensaje" class="oculto">
-<h2>Gracias por tu respuesta.</h2>
-<p>Valoro que hayas hablado con honestidad.</p>
+</div>
+
+
+<!-- 🟢 PANTALLA 3 -->
+<div id="pantalla3" class="oculto">
+<h2>Gracias por tu respuesta sincera.</h2>
 </div>
 
 </div>
+
 
 <script type="module">
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
 
+/* 🔥 PON TU CONFIGURACIÓN DE FIREBASE */
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAatSsIMHUufsc-O3I3cGpDZv3LyBGR7gs",
   authDomain: "respuestas-claras.firebaseapp.com",
@@ -157,10 +126,15 @@ const firebaseConfig = {
   messagingSenderId: "764295530474",
   appId: "1:764295530474:web:a3b01182aebbf4595c9493",
   measurementId: "G-MW5KX5RNY3"
-};
+};;
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+
+window.irARespuesta = function(){
+  document.getElementById("pantalla1").classList.add("oculto");
+  document.getElementById("pantalla2").classList.remove("oculto");
+}
 
 window.enviarRespuesta = function(){
 
@@ -178,20 +152,21 @@ window.enviarRespuesta = function(){
     fecha: new Date().toISOString()
   });
 
-  document.getElementById("respuesta").value = "";
-  document.getElementById("preguntaExtra").classList.remove("oculto");
-};
+  document.getElementById("formulario").classList.add("oculto");
+  document.getElementById("opciones").classList.remove("oculto");
+}
 
 window.agregarMas = function(){
-  document.getElementById("preguntaExtra").classList.add("oculto");
-  document.getElementById("respuesta").focus();
-};
+  document.getElementById("formulario").classList.remove("oculto");
+  document.getElementById("opciones").classList.add("oculto");
+  document.getElementById("respuesta").value = "";
+}
 
 window.finalizar = function(){
-  document.getElementById("contenidoPrincipal").classList.add("oculto");
-  document.getElementById("preguntaExtra").classList.add("oculto");
-  document.getElementById("finalMensaje").classList.remove("oculto");
-};
+  document.getElementById("pantalla2").classList.add("oculto");
+  document.getElementById("pantalla3").classList.remove("oculto");
+}
+
 </script>
 
 </body>
