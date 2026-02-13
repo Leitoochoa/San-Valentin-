@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Para Ti, Mi Amor ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>14 de Febrero</title>
 <style>
-* { box-sizing: border-box; }
-body {
-margin: 0;
-min-height: 100vh;
-font-family: 'Montserrat', sans-serif;
-background: linear-gradient(135deg, #ff758c, #ff7eb3);
-display: flex;
-align-items: center;
-justify-content: center;
-color: #5a1a1a;
-overflow-x: hidden;
+body{
+  background:#111;
+  color:#eaeaea;
+  font-family: Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+  text-align:center;
 }
-.card {
-background: rgba(255, 255, 255, 0.95);
-max-width: 900px;
-width: 92%;
-border-radius: 28px;
-padding: 50px 36px;
-box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-text-align: center;
-position: relative;
-animation: fadeIn 1.5s ease;
+.contenedor{
+  max-width:750px;
+  padding:40px;
 }
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
+h1{
+  font-weight:300;
+  letter-spacing:2px;
 }
-h1 {
-font-family: 'Great Vibes', cursive;
-font-size: 4rem;
-margin: 0 0 10px;
-color: #c2185b;
+p{
+  line-height:1.7;
+  margin:20px 0;
+  font-size:18px;
+  color:#cfcfcf;
 }
-h2 {
-font-weight: 400;
-margin: 0 0 30px;
+.boton{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#ffffff10;
+  border:1px solid #ffffff40;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
 }
-.message {
-font-size: 1.15rem;
-line-height: 1.9;
-max-width: 720px;
-margin: 0 auto 36px;
+.boton:hover{
+  background:#ffffff30;
 }
-.heart {
-font-size: 3.2rem;
-animation: beat 1.4s infinite;
-display: inline-block;
-margin-bottom: 10px;
-}
-@keyframes beat {
-0%, 100% { transform: scale(1); }
-50% { transform: scale(1.25); }
-}
-.btn {
-display: inline-block;
-margin-top: 26px;
-padding: 14px 34px;
-background: linear-gradient(135deg, #c2185b, #ff4f81);
-color: #fff;
-border-radius: 999px;
-text-decoration: none;
-font-weight: 600;
-font-size: 1.05rem;
-transition: transform .25s ease, box-shadow .25s ease;
-box-shadow: 0 14px 30px rgba(194,24,91,0.45);
-}
-.btn:hover {
-transform: translateY(-3px) scale(1.03);
-box-shadow: 0 20px 40px rgba(194,24,91,0.6);
-}
-.hidden-message {
-display: none;
-margin-top: 30px;
-font-size: 1.1rem;
-animation: fadeIn 1s ease;
-color: #a0134a;
-}
-.footer {
-margin-top: 46px;
-font-size: 0.9rem;
-opacity: 0.8;
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>14 de Febrero</h1>
+
+<p>
+14 de febrero… una fecha que muchos celebran con promesas, flores y palabras bonitas.
+Ojalá así se sintiera nuestra historia hoy.
+</p>
+
+<p>
+Pero no vine aquí a romantizar nada.
+No vine a fingir que todo está bien.
+Vine a ser honesto.
+</p>
+
+<p>
+Lo que pasó me dolió.
+Me hizo dudar.
+Me hizo preguntarme si estamos sintiendo lo mismo.
+</p>
+
+<p>
+No quiero rodeos.
+No quiero excusas.
+No quiero medias respuestas.
+Quiero la verdad.
+Aunque incomode.
+Aunque duela.
+</p>
+
+<p>
+Si estás aquí por decisión, quiero saberlo.
+Si no lo estás… también.
+Porque prefiero una verdad incómoda
+que una ilusión tranquila.
+</p>
+
+<button class="boton" onclick="alert('Solo quiero claridad.')">
+Hablemos claro.
+</button>
+
+</div>
+</body>
 </html>
