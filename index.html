@@ -25,7 +25,7 @@ h1{
 }
 p{
   line-height:1.8;
-  margin:22px 0;
+  margin:20px 0;
   font-size:18px;
   color:#cfcfcf;
 }
@@ -41,15 +41,19 @@ textarea{
 }
 button{
   margin-top:15px;
-  padding:12px 30px;
+  padding:12px 25px;
   background:#ffffff10;
   border:1px solid #ffffff40;
   color:white;
   cursor:pointer;
   transition:0.3s;
+  margin-right:10px;
 }
 button:hover{
   background:#ffffff30;
+}
+.oculto{
+  display:none;
 }
 </style>
 </head>
@@ -59,43 +63,84 @@ button:hover{
 
 <h1>14 de Febrero</h1>
 
+<div id="contenidoPrincipal">
+
 <p>
-Hoy es una fecha que muchos celebran con palabras bonitas.
-Yo podría haber hecho lo mismo.
-Pero sería más fácil que honesto.
+14 de febrero.
+Una fecha que muchos usan para celebrar el amor.
+Y sí… yo también estaba preparando algo especial.
+Con intención.
+Con ganas.
+Con ilusión.
 </p>
 
 <p>
-Lo que siento no empezó hoy.
-No es un momento aislado.
-Es algo que viene acumulándose.
-Pequeñas cosas que fui guardando.
-Dudas que intenté ignorar.
-Silencios que pesaron más de lo que dije.
+Pero después de lo que pasó ayer,
+todo eso cambió.
+No por orgullo.
+No por enojo.
+Sino por lo que me hizo sentir.
 </p>
 
 <p>
-No escribo esto desde el enojo.
-Lo escribo porque necesito claridad.
-Porque no quiero una historia bonita hacia afuera
-si por dentro hay incertidumbre.
+Lo de ayer no fue solo un momento aislado.
+Fue el punto que terminó de encajar cosas que ya venían acumulándose:
+dudas pequeñas,
+silencios que intenté entender,
+sensaciones que preferí no convertir en conflicto.
 </p>
 
 <p>
-No quiero rodeos.
-No quiero suposiciones.
-Quiero saber si estamos en el mismo lugar.
-Si estamos construyendo lo mismo.
+Yo estaba construyendo esto con intención.
+No estaba jugando.
+Por eso lo que pasó no me hizo explotar…
+me hizo cuestionar.
+Y eso pesa más.
 </p>
 
 <p>
-Si estás aquí por decisión, quiero sentirlo.
-Si no lo estás, también quiero saberlo.
-Pero necesito verdad.
+No quiero romantizar una fecha si por dentro tengo incertidumbre.
+Necesito saber si estamos en el mismo lugar.
+Si lo que yo estoy dispuesto a construir,
+también lo estás construyendo tú.
+</p>
+
+<p>
+No busco pelea.
+No busco señalar.
+Busco claridad.
+Busco una respuesta real.
+</p>
+
+<p>
+Si algo cambió, prefiero saberlo.
+Si tienes dudas, dímelo.
+Si sigues aquí con la misma intención, también dímelo.
+Pero sin rodeos.
+Sin decir lo que suena bien.
+Solo la verdad.
+</p>
+
+<p>
+Prefiero una verdad que incomode
+antes que una tranquilidad que no sea sincera.
 </p>
 
 <textarea id="respuesta" placeholder="Escribe aquí lo que sientes..."></textarea>
-<button onclick="enviarRespuesta()">Enviar</button>
+<button onclick="enviarRespuesta()">Enviar respuesta</button>
+
+</div>
+
+<div id="preguntaExtra" class="oculto">
+<p>¿Quieres agregar algo más?</p>
+<button onclick="agregarMas()">Sí</button>
+<button onclick="finalizar()">No</button>
+</div>
+
+<div id="finalMensaje" class="oculto">
+<h2>Gracias por tu respuesta.</h2>
+<p>Valoro que hayas hablado con honestidad.</p>
+</div>
 
 </div>
 
@@ -133,9 +178,20 @@ window.enviarRespuesta = function(){
     fecha: new Date().toISOString()
   });
 
-  alert("Gracias por responder con honestidad.");
   document.getElementById("respuesta").value = "";
-}
+  document.getElementById("preguntaExtra").classList.remove("oculto");
+};
+
+window.agregarMas = function(){
+  document.getElementById("preguntaExtra").classList.add("oculto");
+  document.getElementById("respuesta").focus();
+};
+
+window.finalizar = function(){
+  document.getElementById("contenidoPrincipal").classList.add("oculto");
+  document.getElementById("preguntaExtra").classList.add("oculto");
+  document.getElementById("finalMensaje").classList.remove("oculto");
+};
 </script>
 
 </body>
