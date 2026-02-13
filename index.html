@@ -29,8 +29,18 @@ p{
   font-size:18px;
   color:#cfcfcf;
 }
-.boton{
-  margin-top:35px;
+textarea{
+  width:100%;
+  height:120px;
+  margin-top:20px;
+  padding:12px;
+  background:#1a1a1a;
+  color:white;
+  border:1px solid #333;
+  resize:none;
+}
+button{
+  margin-top:15px;
   padding:12px 30px;
   background:#ffffff10;
   border:1px solid #ffffff40;
@@ -38,7 +48,7 @@ p{
   cursor:pointer;
   transition:0.3s;
 }
-.boton:hover{
+button:hover{
   background:#ffffff30;
 }
 </style>
@@ -60,42 +70,73 @@ Lo que siento no empezó hoy.
 No es un momento aislado.
 Es algo que viene acumulándose.
 Pequeñas cosas que fui guardando.
-Dudas que no quise convertir en conflicto.
-Silencios que intenté entender.
-</p>
-
-<p>
-Pero llega un punto donde uno necesita claridad.
-No para discutir.
-No para señalar.
-Sino para saber dónde está parado.
-</p>
-
-<p>
-Yo no quiero una historia bonita hacia afuera.
-Quiero una historia clara hacia adentro.
-Quiero saber si estamos construyendo lo mismo.
-Si estamos sintiendo lo mismo.
-Si estamos en el mismo nivel de intención.
+Dudas que intenté ignorar.
+Silencios que pesaron más de lo que dije.
 </p>
 
 <p>
 No escribo esto desde el enojo.
-Lo escribo desde la honestidad.
-Porque prefiero una verdad que incomode,
-antes que una ilusión que tranquilice.
+Lo escribo porque necesito claridad.
+Porque no quiero una historia bonita hacia afuera
+si por dentro hay incertidumbre.
 </p>
 
 <p>
-Si estás aquí por decisión, quiero saberlo.
-Si no lo estás, también.
-Pero necesito que sea claro.
+No quiero rodeos.
+No quiero suposiciones.
+Quiero saber si estamos en el mismo lugar.
+Si estamos construyendo lo mismo.
 </p>
 
-<button class="boton" onclick="alert('Hablemos con verdad.')">
-Estoy listo para escuchar.
-</button>
+<p>
+Si estás aquí por decisión, quiero sentirlo.
+Si no lo estás, también quiero saberlo.
+Pero necesito verdad.
+</p>
+
+<textarea id="respuesta" placeholder="Escribe aquí lo que sientes..."></textarea>
+<button onclick="enviarRespuesta()">Enviar</button>
 
 </div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAatSsIMHUufsc-O3I3cGpDZv3LyBGR7gs",
+  authDomain: "respuestas-claras.firebaseapp.com",
+  databaseURL: "https://respuestas-claras-default-rtdb.firebaseio.com",
+  projectId: "respuestas-claras",
+  storageBucket: "respuestas-claras.firebasestorage.app",
+  messagingSenderId: "764295530474",
+  appId: "1:764295530474:web:a3b01182aebbf4595c9493",
+  measurementId: "G-MW5KX5RNY3"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+window.enviarRespuesta = function(){
+
+  const texto = document.getElementById("respuesta").value;
+
+  if(texto.trim() === ""){
+    alert("Escribe algo antes de enviar.");
+    return;
+  }
+
+  const respuestasRef = ref(database, "respuestas");
+
+  push(respuestasRef, {
+    mensaje: texto,
+    fecha: new Date().toISOString()
+  });
+
+  alert("Gracias por responder con honestidad.");
+  document.getElementById("respuesta").value = "";
+}
+</script>
+
 </body>
 </html>
